@@ -1,0 +1,34 @@
+{
+  "name": "example",
+  "language": "ar",
+  "direction": "rtl",
+  "colors": {
+    "primary": "#1e6fd9",
+    "secondary": "#013373",
+    "accent": "#ff9e64",
+    "bg": "#f3f7fc",
+    "surface": "#FFFFFF",
+    "text": "#121b28",
+    "muted": "#596475",
+    "onPrimary": "#FFFFFF",
+    "extra": []
+  },
+  "fonts": {
+    "heading": "Cairo",
+    "body": "Tajawal"
+  },
+  "logo": {
+    "default": "logo.svg",
+    "light": "logo-light.svg"
+  },
+  "style": {
+    "radius": 24,
+    "iconSet": "lucide",
+    "pattern": "dots"
+  },
+  "voice": {
+    "tone": "ودّي ومحترف",
+    "hashtags": [],
+    "cta": []
+  }
+}

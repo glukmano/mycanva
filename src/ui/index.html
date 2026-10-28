@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MyCanva</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22%3E%3Cdefs%3E%3ClinearGradient id=%22g%22 x1=%220%22 y1=%220%22 x2=%221%22 y2=%221%22%3E%3Cstop offset=%220%22 stop-color=%22%233D82FF%22/%3E%3Cstop offset=%221%22 stop-color=%22%231A47C8%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width=%22128%22 height=%22128%22 rx=%2236%22 fill=%22url%28%23g%29%22/%3E%3Cpath d=%22M34 94V56l30 27 30-27v38%22 fill=%22none%22 stroke=%22%23fff%22 stroke-width=%2211%22 stroke-linecap=%22round%22 stroke-linejoin=%22round%22/%3E%3Cpath d=%22M97 12Q99 28 115 30Q99 32 97 48Q95 32 79 30Q95 28 97 12Z%22 fill=%22%23FF7A59%22/%3E%3C/svg%3E%0A">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="logo"><svg class="brandmark" width="22" height="22" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128"><defs><linearGradient id="bm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3D82FF"/><stop offset="1" stop-color="#1A47C8"/></linearGradient></defs><rect width="128" height="128" rx="36" fill="url(#bm)"/><path d="M34 94V56l30 27 30-27v38" fill="none" stroke="#fff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/><path d="M97 12Q99 28 115 30Q99 32 97 48Q95 32 79 30Q95 28 97 12Z" fill="#FF7A59"/></svg>
+<span>My<b>Canva</b></span></div>
+  <div class="sep"></div>
+  <div id="docTitle" class="doc">لا يوجد تصميم مفتوح</div>
+  <div class="grow"></div>
+  <button id="sizeBtn" class="btn" title="تغيير مقاس التصميم">المقاس</button>
+  <div class="sep"></div>
+  <button id="undoBtn" class="btn icon" title="تراجع (Ctrl+Z)">↶</button>
+  <button id="redoBtn" class="btn icon" title="إعادة (Ctrl+Shift+Z)">↷</button>
+  <div class="sep"></div>
+  <button id="calBtn" class="btn" title="تقويم المحتوى">📅 التقويم</button>
+  <button id="settingsBtn" class="btn" title="الإعدادات وحالة الاتصال"><span id="statusDot" class="dot idle"></span> ⚙ الإعدادات</button>
+  <span id="saveState" class="muted small"></span>
+  <button id="expJpg" class="btn">JPG</button>
+  <button id="expPng" class="btn primary">تصدير PNG</button>
+</header>
+
+<aside class="side right">
+  <nav class="tabs" id="leftTabs">
+    <button data-tab="designs" class="on">التصاميم</button>
+    <button data-tab="brand">الهوية</button>
+    <button data-tab="add">إضافة</button>
+    <button data-tab="qr">QR</button>
+  </nav>
+  <section id="tab-designs" class="pane on"></section>
+  <section id="tab-brand" class="pane"></section>
+  <section id="tab-add" class="pane"></section>
+  <section id="tab-qr" class="pane"></section>
+</aside>
+
+<main class="stage-wrap">
+  <div id="draftBar" class="draft-bar" hidden></div>
+  <div id="stageScroll" class="stage-scroll">
+    <div id="empty" class="empty">
+      <h2>ابدأ بتصميم جديد</h2>
+      <p>اختر هوية وقالب من تبويب «التصاميم»، أو افتح تصميماً محفوظاً.</p>
+      <button class="btn primary" id="emptyNew">+ تصميم جديد</button>
+    </div>
+    <div id="stage" class="stage" hidden><div id="inner" class="inner"><div id="frameBox" class="frame-box"></div><div id="overlay" class="overlay"></div></div></div>
+  </div>
+  <div id="strip" class="strip" hidden></div>
+  <div class="statusbar">
+    <span id="warn" class="warn"></span>
+    <button id="lintChip" class="chip-btn" hidden></button>
+    <div class="grow"></div>
+    <button class="btn small" id="zoomFit">ملاءمة</button>
+    <input id="zoom" type="range" min="10" max="150" value="50" title="تكبير">
+    <span id="zoomVal" class="small muted">50%</span>
+  </div>
+  <details class="caption" id="captionBox">
+    <summary>الكابشن والهاشتاغات</summary>
+    <textarea id="caption" rows="3" placeholder="نص المنشور…"></textarea>
+    <input id="hashtags" placeholder="#هاشتاغ1 #هاشتاغ2">
+    <div class="pubrow"><label class="small muted">الحالة</label><select id="pubStatus"><option value="">—</option><option value="draft">مسودة</option><option value="approved">موافق عليه</option><option value="scheduled">مجدول</option><option value="published">تم النشر</option></select><input id="pubDate" type="date"><input id="pubTime" type="time"><button id="pubApprove" class="btn small" type="button">✓ اعتماد</button></div>
+    <button class="btn small" id="copyCaption">نسخ النص + الهاشتاغات</button>
+  </details>
+</main>
+
+<aside class="side left">
+  <section class="panel"><h3>الطبقات</h3><div id="layers" class="layers"></div></section>
+  <section class="panel"><h3>الخصائص</h3><div id="props" class="props"><p class="muted small">اختر عنصراً من التصميم.</p></div></section>
+</aside>
+
+<div id="modal" class="modal" hidden><div class="modal-card" id="modalCard"></div></div>
+<div id="toast" class="toast" hidden></div>
+<script type="module" src="/app.js"></script>
+</body>
+</html>

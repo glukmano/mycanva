@@ -1,0 +1,24 @@
+# dependencies / build
+node_modules
+dist
+.DS_Store
+
+# runtime & secrets (settings.json holds the tunnel/MCP token)
+.cache
+exports
+designs
+.mcp.json
+
+# private brand kits and anything derived from them (only the demo "example" brand is shared)
+brands/*
+!brands/example
+user-templates
+
+# plugin runtime data (logo caches, history, state) and state file
+plugins/*/data
+plugins/.state.json
+# bundled club badges are third-party trademarks — keep them out of the public repo
+plugins/*/assets/bundled
+
+# personal brand-import script (hard-coded private paths)
+src/import-brands.ts

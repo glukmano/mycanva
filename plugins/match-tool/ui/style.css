@@ -1,0 +1,26 @@
+.mt-f{margin-bottom:8px}.mt-f>label{display:block;font-size:12px;color:var(--muted);margin-bottom:3px}
+.mt-card{border:1px solid var(--line);border-radius:12px;padding:10px;margin-bottom:8px;background:var(--bg)}
+.mt-chead{display:flex;align-items:center;gap:4px;margin-bottom:8px}
+.mt-team{display:flex;gap:6px;align-items:center;margin-bottom:6px}
+.mt-team input{flex:1}
+.mt-logo{width:34px;height:34px;border-radius:50%;object-fit:contain;background:var(--panel);border:1px solid var(--line);flex:none}
+.mt-logo.none{opacity:.25}
+.mt-card .grid2{margin-bottom:6px}
+.mt-ev summary,.mt-sec summary{cursor:pointer;font-size:13px;font-weight:700;padding:4px 0}
+.mt-sec{border-top:1px solid var(--line);margin-top:10px;padding-top:6px}
+.mt-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:6px}
+.mt-lg{display:flex;flex-direction:column;align-items:center;gap:4px;padding:6px;border:1px solid var(--line);border-radius:10px;background:var(--panel);cursor:pointer;font-size:11px}
+.mt-lg img{width:44px;height:44px;object-fit:contain}
+.mt-lg span{max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mt-logobig{text-align:center;background:var(--bg);border-radius:12px;padding:14px;margin-bottom:10px}.mt-logobig img{height:110px}
+.mt-chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}
+.mt-chip{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:99px;padding:4px 10px;font-size:12px;cursor:pointer;background:var(--panel)}
+.mt-chip input{display:none}.mt-chip.on{background:var(--accent);color:var(--accent-t);border-color:var(--accent)}
+.mt-prev{position:relative;overflow:hidden;border-radius:10px;border:1px solid var(--line);margin:8px 0;direction:ltr;background:#000}
+.mt-prev iframe{position:absolute;left:0;top:0;border:0;transform-origin:top left;pointer-events:none}
+.mt-actions{display:flex;gap:8px;position:sticky;bottom:0;background:var(--panel);padding:10px 0;border-top:1px solid var(--line);margin-top:8px}
+.mt-hist{display:flex;flex-direction:column;gap:4px}.mt-h{text-align:start;border:1px solid var(--line);background:var(--panel);border-radius:8px;padding:6px 10px;cursor:pointer;font-size:12px}
+.mt-logo.miss{border-style:dashed;opacity:.5}
+.mt-logo.loading{animation:mtpulse 1s infinite}@keyframes mtpulse{50%{opacity:.35}}
+.mt-status{margin:6px 0;line-height:1.7}.mt-status .warn{color:var(--warn)}
+.mt-chip:disabled{opacity:.5}

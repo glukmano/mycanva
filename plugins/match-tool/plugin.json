@@ -1,0 +1,117 @@
+{
+  "id": "match-tool",
+  "name": "Match Tool",
+  "name_ar": "أداة المباريات",
+  "version": "1.2.0",
+  "description": "Create match posts: match of the day, fixtures lists, results, live, polls and weekly schedules. Smart team-logo library (Arabic/English), TheSportsDB fixtures and badges, batch sizes and languages.",
+  "description_ar": "منشورات المباريات: مباراة اليوم، قوائم المباريات، النتائج، المباشر، التصويت والجداول الأسبوعية. مكتبة شعارات فرق ذكية (عربي/إنكليزي)، جلب المباريات والشعارات من TheSportsDB، وتوليد عدة مقاسات ولغات دفعة واحدة.",
+  "author": "Melyo",
+  "license": "MIT",
+  "mycanva": ">=1.0.0",
+  "main": "index.js",
+  "ui": {
+    "entry": "ui/index.js",
+    "styles": [
+      "ui/style.css"
+    ]
+  },
+  "i18n": "i18n.json",
+  "toolPrefix": "match",
+  "permissions": [
+    "network",
+    "files:plugin-data",
+    "designs:write"
+  ],
+  "settings": [
+    {
+      "key": "tz",
+      "type": "text",
+      "label": "Time zone for imported kick-offs",
+      "label_ar": "المنطقة الزمنية لأوقات المباريات المستوردة",
+      "default": "Asia/Damascus",
+      "help": "IANA name, e.g. Asia/Riyadh, Europe/Berlin",
+      "help_ar": "اسم IANA مثل Asia/Riyadh أو Europe/Berlin"
+    },
+    {
+      "key": "autoNames",
+      "type": "boolean",
+      "label": "Show team names in the post language when known",
+      "label_ar": "عرض أسماء الفرق بلغة المنشور عندما تكون معروفة",
+      "default": true
+    },
+    {
+      "key": "teamGlow",
+      "type": "boolean",
+      "label": "Glow behind each logo in the team's color",
+      "label_ar": "توهج خلف كل شعار بلون الفريق",
+      "default": true
+    },
+    {
+      "key": "autoFetch",
+      "type": "boolean",
+      "label": "Fetch and store missing team logos automatically (once per team)",
+      "label_ar": "جلب وتخزين شعارات الفرق الناقصة تلقائياً (مرة واحدة لكل فريق)",
+      "default": true,
+      "help": "Logos are saved inside the plugin and never requested again. Failed lookups are remembered too.",
+      "help_ar": "الشعارات تُحفظ داخل الإضافة ولا تُطلب مرة ثانية. ويُتذكَّر الفريق الذي لم يوجد له شعار."
+    },
+    {
+      "key": "missRetryDays",
+      "type": "number",
+      "label": "Days before retrying a team with no logo found",
+      "label_ar": "أيام قبل إعادة محاولة فريق لم يوجد له شعار",
+      "default": 14
+    },
+    {
+      "key": "defaultFormats",
+      "type": "text",
+      "label": "Default sizes (format keys, comma separated)",
+      "label_ar": "المقاسات الافتراضية (مفاتيح مفصولة بفواصل)",
+      "default": "story,post",
+      "help": "story, post, square, fb-post, x-post, yt-thumb …",
+      "help_ar": "مثل story, post, square, fb-post, x-post, yt-thumb"
+    },
+    {
+      "key": "footerMap",
+      "type": "textarea",
+      "label": "Footer text per brand (brandId=text, one per line)",
+      "label_ar": "نص التذييل لكل هوية (معرّف=نص، سطر لكل هوية)",
+      "default": "melyo=melyo.app"
+    },
+    {
+      "key": "disclaimerBrands",
+      "type": "text",
+      "label": "Brands that show the disclaimer line by default",
+      "label_ar": "الهويات التي تعرض سطر التنبيه افتراضياً",
+      "default": "melyo"
+    },
+    {
+      "key": "disclaimerAr",
+      "type": "text",
+      "label": "Disclaimer (Arabic)",
+      "label_ar": "نص التنبيه (عربي)",
+      "default": "مشغّل فقط — لا يتضمن أي قنوات أو محتوى."
+    },
+    {
+      "key": "disclaimerEn",
+      "type": "text",
+      "label": "Disclaimer (English)",
+      "label_ar": "نص التنبيه (إنكليزي)",
+      "default": "Player only — no channels or content included."
+    },
+    {
+      "key": "hashtagsExtra",
+      "type": "text",
+      "label": "Extra hashtags added to every caption",
+      "label_ar": "هاشتاغات إضافية تُضاف لكل كابشن",
+      "default": ""
+    },
+    {
+      "key": "tsdbKey",
+      "type": "password",
+      "label": "TheSportsDB API key (empty = free public key)",
+      "label_ar": "مفتاح TheSportsDB (فارغ = المفتاح العام المجاني)",
+      "default": ""
+    }
+  ]
+}
