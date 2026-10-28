@@ -10,11 +10,17 @@ npx playwright install chromium
 ./start.command        # http://127.0.0.1:3333   (./stop.command to stop)
 ```
 
-MCP (stdio): see `.mcp.json` style config — `npx tsx src/mcp/index.ts`.
+MCP (stdio): copy `.mcp.json.example` to `.mcp.json` — details in [docs/mcp.md](docs/mcp.md).
 
 ## Brand
 
 Mark + wordmark in `assets/brand/`. Primary `#2F6BFF`, ink `#0F1B3D`, accent `#FF7A59`; Space Grotesk.
+
+## Docs
+
+- [Getting started · البدء السريع](docs/getting-started.md)
+- [Connecting AI (MCP) · الربط مع الذكاء الاصطناعي](docs/mcp.md)
+- [Importing a brand identity · استيراد هوية بصرية](docs/importing-a-brand.md)
 
 ## Privacy
 

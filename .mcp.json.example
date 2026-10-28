@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "mycanva": {
+      "command": "npx",
+      "args": ["tsx", "src/mcp/index.ts"],
+      "cwd": "/path/to/mycanva"
+    }
+  }
+}
