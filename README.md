@@ -25,3 +25,7 @@ Mark + wordmark in `assets/brand/`. Primary `#2F6BFF`, ink `#0F1B3D`, accent `#F
 ## Privacy
 
 Your own brand kits (`brands/*` except `example`), designs, exports, settings/tokens (`.cache`) and plugin data are git-ignored.
+
+## License
+
+MIT — see [LICENSE](LICENSE). The MyCanva name and logo in `assets/brand/` are not covered by the MIT grant for use as your own branding.
